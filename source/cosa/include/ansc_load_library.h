@@ -75,7 +75,7 @@
 
 
 #include <dlfcn.h>
-#define  AnscLoadLibrary(f)                         dlopen(f,RTLD_NOW)
+#define  AnscLoadLibrary(f)                         dlopen(f,RTLD_GLOBAL|RTLD_NOW)
 #define  AnscFreeLibrary                            dlclose
 #define  AnscGetProcAddress                         dlsym
 #define  DLL_INSTANCE                               PVOID

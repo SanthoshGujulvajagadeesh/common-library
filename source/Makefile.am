@@ -24,7 +24,49 @@ endif
 
 lib_LTLIBRARIES = libccsp_common.la
 
+lib_LTLIBRARIES += libccsp_common_lite.la
+
 libccsp_common_la_CPPFLAGS = \
+	-D_ANSC_AES_USED_ \
+	-D_ANSC_IPV6_COMPATIBLE_ \
+	-D_ANSC_USE_OPENSSL_ \
+	-D_BBHM_SSE_FILE_IO \
+	-DBUILD_WEB \
+	-D_CCSP_CWMP_TCP_CONNREQ_HANDLER \
+	-D_DSLH_STUN_ \
+	-DENABLE_SA_KEY \
+	-D_NO_PKI_KB5_SUPPORT \
+	-I$(top_srcdir)/cosa/include/linux \
+	-I$(top_srcdir)/debug_api/include \
+	-I$(top_srcdir)/cosa/include \
+	-I$(top_srcdir)/cosa/utilities/include \
+	-I$(top_srcdir)/cosa/custom \
+	-I$(top_srcdir)/cosa/package/bmw2/bwsp/include \
+	-I$(top_srcdir)/cosa/package/bmw2/include \
+	-I$(top_srcdir)/cosa/package/bmw2/bree/include \
+	-I$(top_srcdir)/cosa/package/bmw2/beep/include \
+	-I$(top_srcdir)/cosa/package/bmw2/bwrm/include \
+	-I$(top_srcdir)/cosa/package/system/include \
+	-I$(top_srcdir)/cosa/package/slap/include \
+	-I$(top_srcdir)/cosa/package/slap/services/dslh/include \
+	-I$(top_srcdir)/cosa/package/slap/services/bmc2/include \
+	-I$(top_srcdir)/cosa/package/cli/include \
+	-I$(top_srcdir)/cosa/package/bmc2/include \
+	-I$(top_srcdir)/ccsp/include \
+	-I$(top_srcdir)/ccsp/components/include \
+	-I$(top_srcdir)/ccsp/components/common/PoamIrepFolder \
+	-I$(top_srcdir)/ccsp/components/common/MessageBusHelper/include \
+	-I$(top_srcdir)/ccsp/custom \
+	-I$(top_srcdir)/util_api/tls/include \
+	-I$(top_srcdir)/util_api/web/include \
+	-I$(top_srcdir)/util_api/ansc/include \
+	-I$(top_srcdir)/util_api/stun/include \
+	-I$(top_srcdir)/util_api/http/include \
+	-I$(top_srcdir)/util_api/http/utilities/include \
+	-I$(top_srcdir)/util_api/asn.1/include
+
+
+libccsp_common_lite_la_CPPFLAGS = \
 	-D_ANSC_AES_USED_ \
 	-D_ANSC_IPV6_COMPATIBLE_ \
 	-D_ANSC_USE_OPENSSL_ \
@@ -65,6 +107,8 @@ libccsp_common_la_CPPFLAGS = \
 
 libccsp_common_la_LDFLAGS = -shared -fPIC -lssl -lcrypto -lrbus
 libccsp_common_la_SOURCES =
+libccsp_common_lite_la_LDFLAGS = -shared -fPIC -lssl -lcrypto -lrbus
+libccsp_common_lite_la_SOURCES =
 libccsp_common_la_DEPENDENCIES = \
 	cosa/utilities/AnscObjectArray/AnscByteArray/libCcspCommonLibrary_AnscByteArray.la \
 	cosa/utilities/AnscObjectArray/AnscUIntArray/libCcspCommonLibrary_AnscUIntArray.la \
@@ -242,5 +286,17 @@ libccsp_common_la_DEPENDENCIES = \
 	util_api/asn.1/components/al_pkcs12/libCcspCommonLibrary_al_pkcs12.la \
 	dm_pack/libCcspCommonLibrary_dm_pack.la
 
+libccsp_common_lite_la_DEPENDENCIES = \
+	debug_api/libCcspCommonLibrary_debug_api.la \
+	ccsp/components/common/PoamIrepFolder/libCcspCommonLibrary_PoamIrepFolder.la \
+	util_api/ccsp_msg_bus/libCcspCommonLibrary_ccsp_msg_bus.la \
+	util_api/ansc/AnscPlatform/libCcspCommonLibrary_AnscPlatform.la \
+        util_api/ansc/AnscString/libCcspCommonLibrary_AnscString.la \
+	util_api/ansc/AnscLightComponent/libCcspCommonLibrary_AnscLightComponent.la \
+	util_api/slap/components/SlapVarHelper/libCcspCommonLibrary_SlapVarHelper.la \
+        util_api/ansc/AnscStringUtil/libCcspCommonLibrary_AnscStringUtil.la
+
 
 libccsp_common_la_LIBADD = $(libccsp_common_la_DEPENDENCIES)
+
+libccsp_common_lite_la_LIBADD = $(libccsp_common_lite_la_DEPENDENCIES)
