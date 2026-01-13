@@ -291,10 +291,15 @@ libccsp_common_lite_la_DEPENDENCIES = \
 	ccsp/components/common/PoamIrepFolder/libCcspCommonLibrary_PoamIrepFolder.la \
 	util_api/ccsp_msg_bus/libCcspCommonLibrary_ccsp_msg_bus.la \
 	util_api/ansc/AnscPlatform/libCcspCommonLibrary_AnscPlatform.la \
-        util_api/ansc/AnscString/libCcspCommonLibrary_AnscString.la \
+    util_api/ansc/AnscString/libCcspCommonLibrary_AnscString.la \
 	util_api/ansc/AnscLightComponent/libCcspCommonLibrary_AnscLightComponent.la \
 	util_api/slap/components/SlapVarHelper/libCcspCommonLibrary_SlapVarHelper.la \
-        util_api/ansc/AnscStringUtil/libCcspCommonLibrary_AnscStringUtil.la
+    util_api/ansc/AnscStringUtil/libCcspCommonLibrary_AnscStringUtil.la \
+	ccsp/components/common/MessageBusHelper/helper/libCcspCommonLibrary_helper.la \
+	util_api/ccsp_dm_api/libCcspCommonLibrary_ccsp_dm_api.la \
+	ccsp/components/common/DataModel/dml/components/DslhCpeController/libCcspCommonLibrary_DslhCpeController.la \
+	ccsp/components/common/DataModel/dml/components/DslhDataModelAgent/libCcspCommonLibrary_DslhDataModelAgent.la \
+	dm_pack/libCcspCommonLibrary_dm_pack.la
 
 
 libccsp_common_la_LIBADD = $(libccsp_common_la_DEPENDENCIES)
