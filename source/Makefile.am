@@ -299,15 +299,6 @@ libccsp_common_lite_la_DEPENDENCIES = \
 	util_api/ccsp_dm_api/libCcspCommonLibrary_ccsp_dm_api.la \
 	ccsp/components/common/DataModel/dml/components/DslhCpeController/libCcspCommonLibrary_DslhCpeController.la \
 	ccsp/components/common/DataModel/dml/components/DslhDataModelAgent/libCcspCommonLibrary_DslhDataModelAgent.la \
-	ccsp/components/common/DataModel/dml/components/DslhObjController/libCcspCommonLibrary_DslhObjController.la \
-	ccsp/components/common/DataModel/dml/components/DslhObjcoTable/libCcspCommonLibrary_DslhObjcoTable.la \
-	ccsp/components/common/DataModel/dml/components/DslhWmpDatabase/libCcspCommonLibrary_DslhWmpDatabase.la \
-	util_api/slap/components/SlapVarConverter/libCcspCommonLibrary_SlapVarConverter.la \
-	util_api/ansc/AnscXmlDomParser/libCcspCommonLibrary_AnscXmlDomParser.la \
-	util_api/ansc/AnscCrypto/libCcspCommonLibrary_AnscCrypto.la \
-	util_api/asn.1/components/asn1_x509/libCcspCommonLibrary_asn1_x509.la \
-	util_api/ansc/AnscComponentObject/libCcspCommonLibrary_AnscComponentObject.la \
-	util_api/ansc/AnscAtomTable/libCcspCommonLibrary_AnscAtomTable.la \
 	dm_pack/libCcspCommonLibrary_dm_pack.la
 
 
